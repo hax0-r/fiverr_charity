@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import pips from "../assets/pips.svg"
+import pips from "../assets/pips4/pips.svg"
 import { Link } from 'react-router-dom'
 import Search from '../Components/search'
 import { Donation_Received } from '../Data/Donation_Received'

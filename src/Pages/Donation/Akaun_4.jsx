@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
-import pips from "../../assets/pips.svg"
+import pips from "../../assets/pips4/pip4.svg"
+import pips4_4 from "../../assets/pips4/pips4_4.svg"
 import { Link } from 'react-router-dom'
 import Search from '../../Components/search'
 import { Donation_Received } from '../../Data/Donation_Received'
 import { IoSearchOutline } from 'react-icons/io5'
 import SearchList from '../../Components/SearchList'
 import { SearchContext } from '../../Context/Context'
+import AkaunTable1 from '../../Components/AkaunTable1'
 
 const Akaun_4 = () => {
 
@@ -39,7 +41,7 @@ const Akaun_4 = () => {
                 </div>
             </div>
 
-            <div className="flex  items-center justify-center md:py-14 py-4 w-full">
+            <div className="flex px-5 items-center justify-center md:pt-14 pt-4 w-full">
                 <div className="flex items-center justify-center flex-col w-full max-w-[1280px] mx-auto xl:p-0 p-5">
                     <div className="px-8 py-4 rounded-lg border bg-white text-center w-full md:w-auto">
                         <h2 className="font-bold ">Donation Received</h2>
@@ -67,7 +69,7 @@ const Akaun_4 = () => {
                                         </div>
                                     </Link>
                                     <div className="flex items-center justify-center h-full">
-                                        <div className="w-full max-w-[286px] absolute rounded-xl bg-[#8D8D8D33] h-12 md:-bottom-3.5 -bottom-3" />
+                                        <div className={`w-full max-w-[286px] absolute rounded-xl ${idx == 3 ? "bg-[#0cc0b1]" : "bg-[#8D8D8D33]"} h-12 md:-bottom-3.5 -bottom-3`} />
                                     </div>
                                 </div>
                             ))
@@ -75,7 +77,13 @@ const Akaun_4 = () => {
                     </div>
                 </div>
             </div>
+            <div className="w-full max-w-[71.5%] mx-auto">
+                <img src={pips4_4} className='ml-auto' alt="" />
+            </div>
 
+            <div className="max-w-[1100px] w-full mx-auto px-5">
+                <AkaunTable1/>
+            </div>
         </div>
     )
 }
