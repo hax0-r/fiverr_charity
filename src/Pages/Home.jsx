@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import pips from "../assets/pips.svg"
 import { Link } from 'react-router-dom'
 import Search from '../Components/search'
 import { Donation_Received } from '../Data/Donation_Received'
 import { IoSearchOutline } from 'react-icons/io5'
 import SearchList from '../Components/SearchList'
+import { SearchContext } from '../Context/Context'
 
 const Home = () => {
-    const [search, setSearch] = useState(false)
-    console.log(search);
 
+    const { setIsSearchOpen, isSearchOpen } = useContext(SearchContext)
 
     return (
         <div className='min-h-screen md:bg-[#f4f7f7] fastFadeIn md:rounded-none rounded-t-xl md:mt-0 -mt-3 md:pt-0 pt-8 bg-white'>
@@ -17,27 +17,22 @@ const Home = () => {
 
             <div className="relative md:flex hidden items-center justify-center max-w-7xl w-full mx-auto pt-14">
                 <h1 className='text-center text-[#0A7B75] font-bold md:text-[48px] tracking-wide'>DONATION TRACKER</h1>
-                <button
-                    className='absolute right-5 bottom-3 font-medium poppins py-3 px-8 bg-[#0A7B75] text-white rounded-lg transition-all duration-300 hover:bg-transparent hover:text-[#0A7B75] border-2 active:translate-y-[0.15rem] border-[#0A7B75]'
-                    onClick={() => setSearch(true)}>
-                    Search Donation
-                </button>
-                <Search search={search} setSearch={setSearch} />
+                <Search />
             </div>
 
             <div className="px-5 md:hidden" >
                 {
-                    search &&
-                    <div onClick={() => setSearch(!search)} className="w-screen fastFadeIn fixed top-0 z-30 left-0 h-screen bg-[#1d1d1dbc]"></div>
+                    isSearchOpen &&
+                    <div onClick={() => setIsSearchOpen(!isSearchOpen)} className="w-screen fastFadeIn fixed top-0 z-30 left-0 h-screen bg-[#1d1d1dbc]"></div>
                 }
                 <div className=" relative z-40">
-                    <div onClick={() => setSearch(true)} className=" flex items-center p-3 bg-white justify-center  w-full border mx-auto rounded-xl">
+                    <div onClick={() => setIsSearchOpen(true)} className=" flex items-center p-3 bg-white justify-center  w-full border mx-auto rounded-xl">
                         <input type="text" className='w-full placeholder:italic px-1 py-1 text-sm' placeholder='Enter your Donor ID or Transaction ID' />
                         <IoSearchOutline className='text-2xl text-[#8F9BBA] mr-3' />
                     </div>
-                    <div onClick={() => setSearch(true)} className="">
+                    <div onClick={() => setIsSearchOpen(true)} className="">
                         {
-                            search &&
+                            isSearchOpen &&
                             <SearchList className={"border fastFadeIn rounded-xl mt-3 absolute top-12 w-full bg-white z-20"} />
                         }
                     </div>
