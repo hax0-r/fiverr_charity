@@ -156,13 +156,13 @@ const Home = () => {
                             <>
 
                                 {/* TwoPipes with dynamic colors based on activeTwoPipes state */}
-                                <div className="lg:block hidden">
+                                <div className="">
                                     <StraightSmallPip
                                         pip1={activeStraightSmallPip[1] ? "#0CC0B1" : "#E2E2E2"}
                                     />
                                 </div>
 
-                                <div className="max-w-[679px] mx-auto grid grid-cols-1 w-full md:gap-4 gap-7 lg:mt-0 relative pb-3.5 mt-12">
+                                <div className="max-w-[679px] mx-auto grid grid-cols-1 w-full md:gap-4 gap-7 relative pb-3.5">
                                     <div className='cursor-pointer'
                                         onClick={() => setActiveStraightSmallPipUpadte(1)}
                                     >
@@ -177,13 +177,13 @@ const Home = () => {
                             <>
 
                                 {/* TwoPipes with dynamic colors based on activeTwoPipes state */}
-                                <div className="lg:block hidden">
+                                <div className="">
                                     <StraightSmallPip
                                         pip1={activeStraightSmallPip[2] ? "#0CC0B1" : "#E2E2E2"}
                                     />
                                 </div>
 
-                                <div className="max-w-[679px] mx-auto grid grid-cols-1 w-full md:gap-4 gap-7 lg:mt-0 relative pb-3.5 mt-12">
+                                <div className="max-w-[679px] mx-auto grid grid-cols-1 w-full md:gap-4 gap-7 relative pb-3.5">
                                     <div className='cursor-pointer' onClick={() => setActiveStraightSmallPipUpadte(2)}>
                                         <Akaun_Active color={activeStraightSmallPip[2] ? "#0CC0B1" : "#E2E2E2"} donate={true} />
                                     </div>
@@ -196,13 +196,13 @@ const Home = () => {
                             <>
 
                                 {/* TwoPipes with dynamic colors based on activeTwoPipes state */}
-                                <div className="lg:block hidden">
+                                <div className="">
                                     <StraightSmallPip
                                         pip1={activeStraightSmallPip[3] ? "#0CC0B1" : "#E2E2E2"}
                                     />
                                 </div>
 
-                                <div className="max-w-[679px] mx-auto grid grid-cols-1 w-full md:gap-4 gap-7 lg:mt-0 relative pb-3.5 mt-12">
+                                <div className="max-w-[679px] mx-auto grid grid-cols-1 w-full md:gap-4 gap-7 relative pb-3.5">
                                     <div className='cursor-pointer' onClick={() => setActiveStraightSmallPipUpadte(3)}>
                                         <Akaun_Active color={activeStraightSmallPip[3] ? "#0CC0B1" : "#E2E2E2"} donate={true} />
                                     </div>
@@ -235,8 +235,8 @@ const Home = () => {
                                 <>
                                     <div className="max-w-[28%] w-full lg:block hidden">
                                         <img
-                                            src={activeStraightSmallPip[1] ? leftPipe : rightPip}
-                                            alt={activeStraightSmallPip[1] ? "Left Pipe" : "Right Pipe"}
+                                            src={leftPipe}
+                                            alt={"Left Pipe"}
                                         />
                                     </div>
 
@@ -253,8 +253,8 @@ const Home = () => {
                                 <>
                                     <div className="max-w-[28%] w-full lg:block hidden">
                                         <img
-                                            src={activeStraightSmallPip[2] ? leftPipe : rightPip}
-                                            alt={activeStraightSmallPip[2] ? "Left Pipe" : "Right Pipe"}
+                                            src={leftPipe}
+                                            alt={"Left Pipe"}
                                         />
                                     </div>
 
@@ -271,8 +271,8 @@ const Home = () => {
                                 <>
                                     <div className="max-w-[28%] w-full lg:block hidden">
                                         <img
-                                            src={activeStraightSmallPip[3] ? leftPipe : rightPip}
-                                            alt={activeStraightSmallPip[3] ? "Left Pipe" : "Right Pipe"}
+                                            src={leftPipe}
+                                            alt={"Left Pipe"}
                                         />
                                     </div>
 
