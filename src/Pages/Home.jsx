@@ -48,7 +48,7 @@ const Home = () => {
     }
 
     return (
-        <div className="min-h-screen md:bg-[#f4f7f7] fastFadeIn md:rounded-none rounded-t-xl md:mt-0 -mt-3 md:pt-0 pt-8 bg-white">
+        <div className="min-h-screen bg-[#f4f7f7] fastFadeIn md:rounded-none rounded-t-xl md:mt-0 -mt-3 md:pt-0 pt-8">
             <div className="relative md:flex hidden items-center justify-center max-w-7xl w-full mx-auto pt-14">
                 <h1 className="text-center text-[#0A7B75] font-bold md:text-[48px] tracking-wide">DONATION TRACKER</h1>
                 <button
