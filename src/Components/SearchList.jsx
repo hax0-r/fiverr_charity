@@ -2,12 +2,12 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { SearchContext } from '../Context/Context'
 
-const SearchList = ({ results }) => {
+const SearchList = () => {
     const { isSearchOpen, setIsSearchOpen } = useContext(SearchContext)
 
     return (
         <div>
-            <div className={`p-4 w-full`}>
+            <div className={`p-4 w-full bg-white absolute rounded-lg mt-2`}>
                 <h2 className='text-[#8F9BBA] text-sm font-bold'>Donor ID</h2>
                 <Link onClick={() => setIsSearchOpen(!isSearchOpen)} to={"/donor"} className='mt-3 w-full block'>Abu Bakar</Link>
                 <Link onClick={() => setIsSearchOpen(!isSearchOpen)} to={"/donor"} className='mt-3 w-full block'>Syed Ali</Link>
