@@ -23,7 +23,7 @@ const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
     return (
         <div className='relative'>
             <div className="flex items-center gap-2 justify-end absolute w-full top-[-3.2rem] right-0">
-                <div className="bg-white p-3 flex items-center w-full rounded-lg gap-2 max-w-[342px] ">
+                <div className="bg-white p-3 border flex items-center w-full rounded-lg gap-2 max-w-[342px] ">
                     <IoSearch className='text-lg text-zinc-600 ' />
                     <input type="text" placeholder='Donor Name / Transaction ID'
                         className='text-xs w-full'
@@ -31,15 +31,19 @@ const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
                 </div>
-                <div className="bg-white p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
+                <div className="bg-white border p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
                     <img src={filter} alt="filter" />
                     <h2 className='text-[#4A4A4A] text-xs font-bold md:block hidden'>Filter by</h2>
                 </div>
-                <div className="bg-white p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
+                <div className="bg-white border border-[#E2E2E2] p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
                     <HiBars3BottomLeft />
                     <h2 className='text-[#4A4A4A] text-xs font-bold md:block hidden'>Sort by</h2>
                 </div>
-                <SlClose onClick={clearAllFunctionality} className='text-[#D40000] cursor-pointer md:block hidden text-xl' />
+                {
+                    searchQuery !== "" && (
+                        <SlClose onClick={clearAllFunctionality} className='text-[#D40000] fastFadeIn lg:block hidden cursor-pointer text-xl' />
+                    )
+                }
             </div>
             <div className="overflow-auto md:overflow-x-auto">
                 <table className="min-w-full bg-white border border-[#E2E2E2] border-t-0 rounded-t-lg overflow-hidden text-sm">

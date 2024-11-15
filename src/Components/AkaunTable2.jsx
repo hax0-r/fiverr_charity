@@ -6,7 +6,7 @@ import { SlClose } from 'react-icons/sl'
 import { SearchContext } from '../Context/Context'
 import { AKAUN_DATA2 } from '../Data/AkaunData'
 
-const AkaunTable2 = ({headerColor}) => {
+const AkaunTable2 = ({ headerColor }) => {
     const { setSearchQuery, searchQuery } = useContext(SearchContext)
 
     const filteredData = AKAUN_DATA2.filter((row) => {
@@ -29,7 +29,7 @@ const AkaunTable2 = ({headerColor}) => {
     return (
         <div className='relative'>
             <div className="flex items-center gap-2 justify-end absolute w-full top-[-3.2rem] right-0">
-                <div className="bg-white p-3 flex items-center w-full rounded-lg gap-2 max-w-[342px] ">
+                <div className="bg-white border p-3 flex items-center w-full rounded-lg gap-2 max-w-[342px] ">
                     <IoSearch className='text-lg text-zinc-600 ' />
                     <input type="text" placeholder='Donor Name / Transaction ID'
                         className='text-xs w-full'
@@ -37,20 +37,24 @@ const AkaunTable2 = ({headerColor}) => {
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
                 </div>
-                <div className="bg-white p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
+                <div className="bg-white border p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
                     <img src={filter} alt="filter" />
                     <h2 className='text-[#4A4A4A] text-xs font-bold lg:block hidden'>Filter by</h2>
                 </div>
-                <div className="bg-white p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
+                <div className="bg-white border p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
                     <HiBars3BottomLeft />
                     <h2 className='text-[#4A4A4A] text-xs font-bold lg:block hidden'>Sort by</h2>
                 </div>
-                <SlClose onClick={clearAllFunctionality} className='text-[#D40000] lg:block hidden cursor-pointer text-xl' />
+                {
+                    searchQuery !== "" && (
+                        <SlClose onClick={clearAllFunctionality} className='text-[#D40000] fastFadeIn lg:block hidden cursor-pointer text-xl' />
+                    )
+                }
             </div>
             <div className="overflow-auto md:overflow-x-auto">
-                <table className="min-w-full bg-white border border-[#E2E2E2] border-t-0 rounded-t-lg overflow-hidden text-sm">
+                <table className="min-w-full bg-white border border-[#E2E2E2] rounded-t-lg overflow-hidden text-sm">
                     <thead>
-                        <tr style={{backgroundColor:headerColor}} className={` text-white`}>
+                        <tr style={{ backgroundColor: headerColor }} className={` text-white`}>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">No.</th>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">Transaction ID</th>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">Donor Name/Donor ID</th>
@@ -70,7 +74,7 @@ const AkaunTable2 = ({headerColor}) => {
                         ))}
                         <tr className="bg-gray-100">
                             <td colSpan="4" className="py-3 px-4 font-bold text-right"></td>
-                            <td className="py-3 px-4 font-bold">RM {totalAmount}</td>
+                            <td className="py-3 px-4 font-bold">RM{totalAmount}</td>
                         </tr>
                     </tbody>
                 </table>
