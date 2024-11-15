@@ -68,7 +68,7 @@ const Home = () => {
                     <div className="px-8 py-4 rounded-lg border bg-white text-center w-full md:w-auto">
                         <h2 className="font-bold">Donation Received</h2>
                         <p className="pt-4 text-[#C4C4C4] text-sm">Amount</p>
-                        <h2 className="text-[24px] font-bold text-[#0A7B75]">RM 1,234,567.50</h2>
+                        <h2 className="text-[24px] font-bold text-[#0A7B75]">RM1,234,567.50</h2>
                     </div>
 
                     {/* FourPips with dynamic pip colors based on active tabs */}

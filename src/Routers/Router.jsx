@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../Pages/Home";
-import Akaun_4 from "../Pages/Donation/akaun_4";
+import Donor from "../Pages/Donor";
 
 export const router = createBrowserRouter([
     {
@@ -13,8 +13,8 @@ export const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: "/donation/akaun-4",
-                element: <Akaun_4 />
+                path: "/donor",
+                element: <Donor />
             },
         ]
     },
