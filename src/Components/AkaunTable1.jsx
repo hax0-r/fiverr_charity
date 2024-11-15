@@ -45,8 +45,8 @@ const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
                     )
                 }
             </div>
-            <div className="overflow-auto md:overflow-x-auto">
-                <table className="min-w-full bg-white border border-[#E2E2E2] border-t-0 rounded-t-lg overflow-hidden text-sm">
+            <div className="overflow-auto md:overflow-x-auto border rounded-lg border-[#E2E2E2]">
+                <table className="min-w-full bg-white border-t-0  overflow-hidden text-sm">
                     <thead>
                         <tr style={{ backgroundColor: headColor }} className=" text-white">
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">No.</th>
@@ -58,7 +58,7 @@ const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {filteredData.map((row, index) => (
+                        {filteredData.length > 0 ? filteredData.map((row, index) => (
                             <tr key={index} className={`border-b border-gray-200 transition-all duration-300 hover:bg-zinc-50 ${index % 2 === 0 ? 'bg-white' : 'bg-[#f7f8fc]'}`}>
                                 <td className="py-3.5 px-6">{row.id}</td>
                                 <td className="py-3.5 px-6">{row.transactionId}</td>
@@ -67,7 +67,13 @@ const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
                                 <td className="py-3.5 px-6">{row.amount}</td>
                                 <td className="py-3.5 px-6">{row.status}</td>
                             </tr>
-                        ))}
+                        )) : (
+                            <tr>
+                                <td colSpan="6" className="py-3.5 px-6 text-center text-[#999999] text-sm border">
+                                    No Data Found
+                                </td>
+                            </tr>
+                        )}
                     </tbody>
                 </table>
             </div>

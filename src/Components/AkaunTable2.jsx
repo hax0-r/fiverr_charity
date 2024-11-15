@@ -51,8 +51,8 @@ const AkaunTable2 = ({ headerColor }) => {
                     )
                 }
             </div>
-            <div className="overflow-auto md:overflow-x-auto">
-                <table className="min-w-full bg-white border border-[#E2E2E2] rounded-t-lg overflow-hidden text-sm">
+            <div className="overflow-auto md:overflow-x-auto border rounded-lg border-[#E2E2E2]">
+                <table className="min-w-full bg-white overflow-hidden text-sm">
                     <thead>
                         <tr style={{ backgroundColor: headerColor }} className={` text-white`}>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">No.</th>
@@ -63,23 +63,37 @@ const AkaunTable2 = ({ headerColor }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {filteredData.map((row, index) => (
-                            <tr key={index} className={`border-b border-gray-200 transition-all duration-300 hover:bg-zinc-50 ${index % 2 === 0 ? 'bg-white' : 'bg-[#f7f8fc]'}`}>
-                                <td className="py-3.5 px-6">{row.id}.</td>
-                                <td className="py-3.5 px-6">{row.transactionId}</td>
-                                <td className="py-3.5 px-6">{row.donor}</td>
-                                <td className="py-3.5 px-6">{row.date}</td>
-                                <td className="py-3.5 px-6">{row.amount}</td>
+                        {filteredData.length > 0 ? (
+                            <>
+                                {filteredData.map((row, index) => (
+                                    <tr
+                                        key={index}
+                                        className={`border-b border-gray-200 transition-all duration-300 hover:bg-zinc-50 ${index % 2 === 0 ? 'bg-white' : 'bg-[#f7f8fc]'
+                                            }`}
+                                    >
+                                        <td className="py-3.5 px-6">{row.id}.</td>
+                                        <td className="py-3.5 px-6">{row.transactionId}</td>
+                                        <td className="py-3.5 px-6">{row.donor}</td>
+                                        <td className="py-3.5 px-6">{row.date}</td>
+                                        <td className="py-3.5 px-6">{row.amount}</td>
+                                    </tr>
+                                ))}
+                                <tr className="bg-gray-100">
+                                    <td colSpan="4" className="py-3 px-4 font-bold text-right">Total:</td>
+                                    <td className="py-3 px-4 font-bold">RM{totalAmount}</td>
+                                </tr>
+                            </>
+                        ) : (
+                            <tr>
+                                <td colSpan="6" className="py-3.5 px-6 text-center text-[#999999] text-sm border">
+                                    No Data Found
+                                </td>
                             </tr>
-                        ))}
-                        <tr className="bg-gray-100">
-                            <td colSpan="4" className="py-3 px-4 font-bold text-right"></td>
-                            <td className="py-3 px-4 font-bold">RM{totalAmount}</td>
-                        </tr>
+                        )}
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div >
     )
 }
 
