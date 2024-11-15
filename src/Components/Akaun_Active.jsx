@@ -5,13 +5,13 @@ import { LuUpload } from 'react-icons/lu'
 const Akaun_Active = ({ donate, color }) => {
     return (
         <div>
-            <div className="relative ">
-                <div className="max-w-[280px] w-full fastFadeIn overflow-hidden bg-white rounded-lg mx-auto pt-3 transition-all duration-500 border relative z-10">
+            <div className="relative">
+                <div className="w-[280px] fastFadeIn overflow-hidden bg-white rounded-lg mx-auto pt-3 transition-all duration-500 border relative z-10">
                     <div className="flex items-center justify-center gap-3 px-4">
                         <div className="max-w-[32px] w-full  h-8 bg-[#0A7B75] rounded-lg" />
                         <div className="w-full">
                             <h2 className="flex items-center w-full justify-between font-bold text-[#4A4A4A] leading-5">
-                                name <span className="text-xs"> {!donate && "23%"} </span>
+                                name <span className="text-xs"> </span>
                             </h2>
                             <p className="text-sm text-[#4A4A4A]">subName</p>
                         </div>
@@ -57,7 +57,7 @@ const Akaun_Active = ({ donate, color }) => {
                         style={{
                             backgroundColor: color
                         }}
-                        className="w-full max-w-[310px] absolute rounded-xl h-12 md:-bottom-3.5 -bottom-3" />
+                        className="w-[310px] absolute rounded-xl h-12 md:-bottom-3.5 -bottom-3" />
                 </div>
             </div>
         </div>
