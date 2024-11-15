@@ -5,6 +5,7 @@ import { HiBars3BottomLeft } from 'react-icons/hi2'
 import { SlClose } from 'react-icons/sl'
 import { SearchContext } from '../Context/Context'
 import { AKAUN_DATA } from '../Data/AkaunData'
+import { IoIosCloseCircle } from 'react-icons/io'
 
 const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
     const { setSearchQuery, searchQuery } = useContext(SearchContext)
@@ -23,16 +24,20 @@ const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
     return (
         <div className='relative'>
             <div className="flex items-center gap-2 justify-end absolute w-full top-[-3.2rem] right-0">
-                <div className="bg-white p-3 border flex items-center w-full rounded-lg gap-2 max-w-[342px] ">
+                <div className="bg-white px-3 border flex items-center w-full rounded-lg gap-2 max-w-[342px] ">
                     <IoSearch className='text-lg text-zinc-600 ' />
                     <input type="text" placeholder='Donor Name / Transaction ID'
-                        className='text-xs w-full'
+                        className='text-xs p-3 w-full'
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
+                    {
+                        searchQuery !== "" && (
+                            <IoIosCloseCircle onClick={clearAllFunctionality} className='text-[#A8A8A8] cursor-pointer text-xl md:hidden' />
+                        )}
                 </div>
-                <div className="bg-white border p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
-                    <img src={filter} alt="filter" />
+                <div className="bg-white border px-3.5 py-2.5 flex cursor-pointer items-center rounded-lg gap-2 ">
+                    <img src={filter} className='h-5' alt="filter" />
                     <h2 className='text-[#4A4A4A] text-xs font-bold md:block hidden'>Filter by</h2>
                 </div>
                 <div className="bg-white border border-[#E2E2E2] p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
@@ -41,7 +46,7 @@ const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
                 </div>
                 {
                     searchQuery !== "" && (
-                        <SlClose onClick={clearAllFunctionality} className='text-[#D40000] fastFadeIn lg:block hidden cursor-pointer text-xl' />
+                        <SlClose onClick={clearAllFunctionality} className='text-[#D40000] fastFadeIn md:block hidden cursor-pointer text-xl' />
                     )
                 }
             </div>

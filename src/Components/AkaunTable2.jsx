@@ -5,6 +5,7 @@ import { HiBars3BottomLeft } from 'react-icons/hi2'
 import { SlClose } from 'react-icons/sl'
 import { SearchContext } from '../Context/Context'
 import { AKAUN_DATA2 } from '../Data/AkaunData'
+import { IoIosCloseCircle } from 'react-icons/io'
 
 const AkaunTable2 = ({ headerColor }) => {
     const { setSearchQuerySec, searchQuerySec } = useContext(SearchContext)
@@ -29,17 +30,21 @@ const AkaunTable2 = ({ headerColor }) => {
     return (
         <div className='relative'>
             <div className="flex items-center gap-2 justify-end absolute w-full top-[-3.2rem] right-0">
-                <div className="bg-white border p-3 flex items-center w-full rounded-lg gap-2 max-w-[342px] ">
+                <div className="bg-white px-3 border flex items-center w-full rounded-lg gap-2 max-w-[342px] ">
                     <IoSearch className='text-lg text-zinc-600 ' />
                     <input type="text" placeholder='Donor Name / Transaction ID'
-                        className='text-xs w-full'
+                        className='text-xs p-3 w-full'
                         value={searchQuerySec}
                         onChange={(e) => setSearchQuerySec(e.target.value)}
                     />
+                    {
+                        searchQuerySec !== "" && (
+                            <IoIosCloseCircle onClick={clearAllFunctionality} className='text-[#A8A8A8] cursor-pointer text-xl md:hidden' />
+                        )}
                 </div>
-                <div className="bg-white border p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
-                    <img src={filter} alt="filter" />
-                    <h2 className='text-[#4A4A4A] text-xs font-bold lg:block hidden'>Filter by</h2>
+                <div className="bg-white border px-3.5 py-2.5 flex cursor-pointer items-center rounded-lg gap-2 ">
+                    <img src={filter} className='h-5' alt="filter" />
+                    <h2 className='text-[#4A4A4A] text-xs font-bold md:block hidden'>Filter by</h2>
                 </div>
                 <div className="bg-white border p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
                     <HiBars3BottomLeft />

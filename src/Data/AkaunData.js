@@ -10,6 +10,13 @@ export const AKAUN_DATA = [
     { id: 9, transactionId: 'JIX12389480AMXCL', donor: 'Name', date: '2/2/2022 9:34pm', receiver: 'Receiver Name', category: 'Health', vendor: 'Vendor 1', amount: '1,000.00', status: 'Paid out' },
     { id: 10, transactionId: 'JIX12389480AMXCL', donor: 'Name', date: '2/2/2022 9:34pm', receiver: 'Receiver Name', category: 'Education', vendor: 'Vendor 1', amount: '1,000.00', status: 'Paid out' }
 ];
+export const AKAUN_DATA_Donate = [
+    { id: 1, transactionId: 'JIX12389480AMXCL', donor: 'Abu Bakar', date: '2/2/2022 9:34pm', receiver: 'Abdul', category: 'Groceries', vendor: 'Vendor 1', amount: '10.00', status: 'Paid out' },
+    { id: 2, transactionId: 'ZXY98765432PLQRT', donor: 'Abu Bakar', date: '2/2/2022 9:34pm', receiver: 'Ahmad Zainal', category: 'Education', vendor: 'Vendor 1', amount: '10.00', status: 'Paid out' },
+    { id: 3, transactionId: 'ABC45678901MNOPQ', donor: 'Abu Bakar', date: '2/2/2022 9:34pm', receiver: 'Siti Aisyah', category: 'Health', vendor: 'Vendor 1', amount: '10.00', status: 'Paid out' },
+    { id: 4, transactionId: 'LMN12345678QRSTU', donor: 'Abu Bakar', date: '2/2/2022 9:34pm', receiver: 'Ravi Kumar', category: 'Education', vendor: 'Vendor 1', amount: '10.00', status: 'Paid out' },
+    { id: 5, transactionId: 'OPQ23456789UVWXZ', donor: 'Abu Bakar', date: '2/2/2022 9:34pm', receiver: 'Fatimah Noor', category: 'Groceries', vendor: 'Vendor 1', amount: '10.00', status: 'Paid out' },
+   ];
 
 
 export const AKAUN_DATA2 = [
