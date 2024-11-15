@@ -5,10 +5,15 @@ import { Link } from 'react-router-dom'
 import DonorTable from '../Components/DonorTable'
 import Akaun_Active from '../Components/Akaun_Active'
 import StraightSmallPip from '../assets/Components/StraightSmallPip'
+import { TiArrowLeft } from 'react-icons/ti'
 
 const Donor = () => {
     return (
         <div className="min-h-screen bg-[#f4f7f7] fastFadeIn md:rounded-none rounded-t-xl md:mt-0 -mt-3 md:pt-0 pt-8">
+
+            <Link to={"/"} className='md:hidden'>
+                <TiArrowLeft className='absolute top-[27px] text-white text-3xl left-5' />
+            </Link>
 
             <div className="relative md:flex hidden items-center justify-between max-w-7xl w-full mx-auto pt-14">
                 <Link to={"/"} className='font-bold text-2xl flex items-center gap-2'> <MdOutlineKeyboardArrowLeft />Back </Link>
