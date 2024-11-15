@@ -1,15 +1,15 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { IoSearch } from 'react-icons/io5'
 import filter from "../assets/filter.svg"
 import { HiBars3BottomLeft } from 'react-icons/hi2'
 import { SlClose } from 'react-icons/sl'
 import { SearchContext } from '../Context/Context'
-import { AKAUN_DATA } from '../Data/AkaunData'
+import { AKAUN_DATA2 } from '../Data/AkaunData'
 
-const AkaunTable1 = () => {
+const AkaunTable2 = ({headerColor}) => {
     const { setSearchQuery, searchQuery } = useContext(SearchContext)
 
-    const filteredData = AKAUN_DATA.filter((row) => {
+    const filteredData = AKAUN_DATA2.filter((row) => {
         return (
             row.donor.toLowerCase().includes(searchQuery.toLowerCase()) ||
             row.transactionId.toLowerCase().includes(searchQuery.toLowerCase())
@@ -19,6 +19,12 @@ const AkaunTable1 = () => {
     const clearAllFunctionality = () => {
         setSearchQuery("")
     }
+
+    const totalAmount = filteredData.reduce((sum, item) => {
+        const amount = parseFloat(item.amount.replace(',', ''));
+        return sum + amount;
+    }, 0);
+
 
     return (
         <div className='relative'>
@@ -33,37 +39,39 @@ const AkaunTable1 = () => {
                 </div>
                 <div className="bg-white p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
                     <img src={filter} alt="filter" />
-                    <h2 className='text-[#4A4A4A] text-xs font-bold md:block hidden'>Filter by</h2>
+                    <h2 className='text-[#4A4A4A] text-xs font-bold lg:block hidden'>Filter by</h2>
                 </div>
                 <div className="bg-white p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
                     <HiBars3BottomLeft />
-                    <h2 className='text-[#4A4A4A] text-xs font-bold md:block hidden'>Sort by</h2>
+                    <h2 className='text-[#4A4A4A] text-xs font-bold lg:block hidden'>Sort by</h2>
                 </div>
-                <SlClose onClick={clearAllFunctionality} className='text-[#D40000] cursor-pointer md:block hidden text-xl' />
+                <SlClose onClick={clearAllFunctionality} className='text-[#D40000] lg:block hidden cursor-pointer text-xl' />
             </div>
             <div className="overflow-auto md:overflow-x-auto">
                 <table className="min-w-full bg-white border border-[#E2E2E2] border-t-0 rounded-t-lg overflow-hidden text-sm">
                     <thead>
-                        <tr className="bg-teal-600 text-white">
+                        <tr className={`bg-[${headerColor}] text-white`}>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">No.</th>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">Transaction ID</th>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">Donor Name/Donor ID</th>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">Date & Time Transferred</th>
-                            <th className="py-3.5 px-6 text-left font-semibold text-nowrap">Amount Donated</th>
-                            <th className="py-3.5 px-6 text-left font-semibold text-nowrap">Status</th>
+                            <th className="py-3.5 px-6 text-left font-semibold text-nowrap">Transferred Amount</th>
                         </tr>
                     </thead>
                     <tbody>
                         {filteredData.map((row, index) => (
                             <tr key={index} className={`border-b border-gray-200 transition-all duration-300 hover:bg-zinc-50 ${index % 2 === 0 ? 'bg-white' : 'bg-[#f7f8fc]'}`}>
-                                <td className="py-3.5 px-6">{row.id}</td>
+                                <td className="py-3.5 px-6">{row.id}.</td>
                                 <td className="py-3.5 px-6">{row.transactionId}</td>
                                 <td className="py-3.5 px-6">{row.donor}</td>
                                 <td className="py-3.5 px-6">{row.date}</td>
                                 <td className="py-3.5 px-6">{row.amount}</td>
-                                <td className="py-3.5 px-6">{row.status}</td>
                             </tr>
                         ))}
+                        <tr className="bg-gray-100">
+                            <td colSpan="4" className="py-3 px-4 font-bold text-right"></td>
+                            <td className="py-3 px-4 font-bold">RM {totalAmount}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -71,6 +79,10 @@ const AkaunTable1 = () => {
     )
 }
 
-export default AkaunTable1
+export default AkaunTable2
+
+
+
+
 
 

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import pips from "../../assets/pips4/pip4.svg"
 import pips4_4 from "../../assets/pips4/pips4_4.svg"
 import { Link } from 'react-router-dom'
-import Search from '../../Components/search'
+// import Search from '../../Components/search'
 import { Donation_Received } from '../../Data/Donation_Received'
 import { IoSearchOutline } from 'react-icons/io5'
 import SearchList from '../../Components/SearchList'
