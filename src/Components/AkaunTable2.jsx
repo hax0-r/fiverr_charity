@@ -50,7 +50,7 @@ const AkaunTable2 = ({headerColor}) => {
             <div className="overflow-auto md:overflow-x-auto">
                 <table className="min-w-full bg-white border border-[#E2E2E2] border-t-0 rounded-t-lg overflow-hidden text-sm">
                     <thead>
-                        <tr className={`bg-[${headerColor}] text-white`}>
+                        <tr style={{backgroundColor:headerColor}} className={` text-white`}>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">No.</th>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">Transaction ID</th>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">Donor Name/Donor ID</th>

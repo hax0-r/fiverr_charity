@@ -16,9 +16,9 @@ const SearchList = ({ results }) => {
                 <Link onClick={() => setIsSearchOpen(!isSearchOpen)} to={"/donor"} className='mt-3 w-full block'>
                     JIX12389480AMXCL</Link>
                 <h2 className='text-[#8F9BBA] text-sm font-bold mt-5'>Categories</h2>
-                <Link onClick={() => setIsSearchOpen(!isSearchOpen)} to={"/categories"} className='mt-3 w-full block'>Groceries</Link>
-                <Link onClick={() => setIsSearchOpen(!isSearchOpen)} to={"/categories"} className='mt-3 w-full block'>Health</Link>
-                <Link onClick={() => setIsSearchOpen(!isSearchOpen)} to={"/categories"} className='mt-3 w-full block'>Education</Link>
+                <Link onClick={() => setIsSearchOpen(!isSearchOpen)} to={"/groceries"} className='mt-3 w-full block'>Groceries</Link>
+                <Link onClick={() => setIsSearchOpen(!isSearchOpen)} to={"/health"} className='mt-3 w-full block'>Health</Link>
+                <Link onClick={() => setIsSearchOpen(!isSearchOpen)} to={"/education"} className='mt-3 w-full block'>Education</Link>
             </div>
         </div>
     )

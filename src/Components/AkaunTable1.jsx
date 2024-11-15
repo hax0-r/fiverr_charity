@@ -6,7 +6,7 @@ import { SlClose } from 'react-icons/sl'
 import { SearchContext } from '../Context/Context'
 import { AKAUN_DATA } from '../Data/AkaunData'
 
-const AkaunTable1 = () => {
+const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
     const { setSearchQuery, searchQuery } = useContext(SearchContext)
 
     const filteredData = AKAUN_DATA.filter((row) => {
@@ -44,7 +44,7 @@ const AkaunTable1 = () => {
             <div className="overflow-auto md:overflow-x-auto">
                 <table className="min-w-full bg-white border border-[#E2E2E2] border-t-0 rounded-t-lg overflow-hidden text-sm">
                     <thead>
-                        <tr className="bg-teal-600 text-white">
+                        <tr style={{ backgroundColor: headColor }} className=" text-white">
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">No.</th>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">Transaction ID</th>
                             <th className="py-3.5 px-6 text-left font-semibold text-nowrap">Donor Name/Donor ID</th>

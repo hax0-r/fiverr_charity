@@ -2,7 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../Pages/Home";
 import Donor from "../Pages/Donor";
-import Categories from "../Pages/Categories/Categories";
+import Groceries from "../Pages/Categories/Groceries";
+import Education from "../Pages/Categories/Education";
+import Health from "../Pages/Categories/Health";
 
 export const router = createBrowserRouter([
     {
@@ -18,8 +20,16 @@ export const router = createBrowserRouter([
                 element: <Donor />
             },
             {
-                path: "/categories",
-                element: <Categories />
+                path: "/groceries",
+                element: <Groceries />
+            },
+            {
+                path: "/education",
+                element: <Education />
+            },
+            {
+                path: "/health",
+                element: <Health />
             },
         ]
     },

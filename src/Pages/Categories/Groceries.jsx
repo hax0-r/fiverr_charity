@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import Akaun_Active from '../../Components/Akaun_Active'
 import AkaunTable1 from '../../Components/AkaunTable1'
 
-const Categories = () => {
+const Groceries = () => {
     return (
         <div className="min-h-screen bg-[#f4f7f7] fastFadeIn md:rounded-none rounded-t-xl md:mt-0 -mt-3 md:pt-0 pt-8">
 
@@ -29,7 +29,7 @@ const Categories = () => {
                         <Akaun_Active color={"#0A7B75"} />
                     </div>
                     <div className="max-w-[1100px] w-full mx-auto lg:px-5 mt-36">
-                        <AkaunTable1 />
+                        <AkaunTable1 headColor={"#0A7B75"}  />
                     </div>
 
                 </div>
@@ -39,4 +39,4 @@ const Categories = () => {
     )
 }
 
-export default Categories
+export default Groceries

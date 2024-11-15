@@ -259,7 +259,7 @@ const Home = () => {
                                     </div>
 
                                     <div className="max-w-[1100px] w-full mx-auto lg:px-5 lg:mt-0 mt-20">
-                                        <AkaunTable2 headerColor={"#0A7B75"} />
+                                        <AkaunTable2 headerColor={"#5fc8a2"} />
                                     </div>
                                 </>
                             )
@@ -277,7 +277,7 @@ const Home = () => {
                                     </div>
 
                                     <div className="max-w-[1100px] w-full mx-auto lg:px-5 lg:mt-0 mt-20">
-                                        <AkaunTable2 headerColor={"#5FC2C8"} />
+                                        <AkaunTable2 headerColor={"#5fc2c8"} />
                                     </div>
                                 </>
                             )
