@@ -42,7 +42,7 @@ const Home = () => {
     const setActiveStraightSmallPipUpadte = (num) => {
         setActiveStraightSmallPip(prevState => {
             const updatedState = [...prevState];
-            updatedState[num] = true;
+            updatedState[num] = !prevState[num];
             return updatedState;
         });
     }

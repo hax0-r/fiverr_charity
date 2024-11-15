@@ -7,17 +7,17 @@ import { SearchContext } from '../Context/Context'
 import { AKAUN_DATA2 } from '../Data/AkaunData'
 
 const AkaunTable2 = ({ headerColor }) => {
-    const { setSearchQuery, searchQuery } = useContext(SearchContext)
+    const { setSearchQuerySec, searchQuerySec } = useContext(SearchContext)
 
     const filteredData = AKAUN_DATA2.filter((row) => {
         return (
-            row.donor.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            row.transactionId.toLowerCase().includes(searchQuery.toLowerCase())
+            row.donor.toLowerCase().includes(searchQuerySec.toLowerCase()) ||
+            row.transactionId.toLowerCase().includes(searchQuerySec.toLowerCase())
         );
     });
 
     const clearAllFunctionality = () => {
-        setSearchQuery("")
+        setSearchQuerySec("")
     }
 
     const totalAmount = filteredData.reduce((sum, item) => {
@@ -33,8 +33,8 @@ const AkaunTable2 = ({ headerColor }) => {
                     <IoSearch className='text-lg text-zinc-600 ' />
                     <input type="text" placeholder='Donor Name / Transaction ID'
                         className='text-xs w-full'
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
+                        value={searchQuerySec}
+                        onChange={(e) => setSearchQuerySec(e.target.value)}
                     />
                 </div>
                 <div className="bg-white border p-3 flex cursor-pointer items-center rounded-lg gap-2 ">
@@ -46,7 +46,7 @@ const AkaunTable2 = ({ headerColor }) => {
                     <h2 className='text-[#4A4A4A] text-xs font-bold lg:block hidden'>Sort by</h2>
                 </div>
                 {
-                    searchQuery !== "" && (
+                    searchQuerySec !== "" && (
                         <SlClose onClick={clearAllFunctionality} className='text-[#D40000] fastFadeIn lg:block hidden cursor-pointer text-xl' />
                     )
                 }

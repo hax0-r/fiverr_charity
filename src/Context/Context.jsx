@@ -8,6 +8,7 @@ export const ContextProvider = ({ children }) => {
     const [isSearchOpen, setIsSearchOpen] = useState(false)
 
     const [searchQuery, setSearchQuery] = useState("");
+    const [searchQuerySec, setSearchQuerySec] = useState("");
 
 
     const obj = {
@@ -16,7 +17,9 @@ export const ContextProvider = ({ children }) => {
         isSearchOpen,
         setIsSearchOpen,
         searchQuery,
-        setSearchQuery
+        setSearchQuery,
+        searchQuerySec,
+        setSearchQuerySec
     }
 
     return (
