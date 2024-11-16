@@ -2,10 +2,22 @@ import React from 'react'
 import { FaRegHeart } from 'react-icons/fa'
 import { LuUpload } from 'react-icons/lu'
 
-const Akaun_Active = ({ donate, color, categoryColor = "#0A7B75",ProgressColor ="#9FE870" }) => {
+import StraightResponsive from "../assets/pips4/StraightResponsive.svg"
+import { useLocation } from 'react-router'
+
+const Akaun_Active = ({ donate, color, categoryColor = "#0A7B75", ProgressColor = "#9FE870" }) => {
+
+    const { pathname } = useLocation()
+
+
+
     return (
         <div>
             <div className="relative">
+                {
+                    (!donate) && (
+                        <img src={StraightResponsive} className={`absolute md:hidden top-48 right-0 ${pathname === "/" ? "block" : "hidden"}`} alt="" />
+                    )}
                 <div className="w-[280px] fastFadeIn overflow-hidden bg-white rounded-lg mx-auto pt-3 transition-all duration-500 border relative z-10">
                     <div className="flex items-center justify-center gap-3 px-4">
                         <div style={{ backgroundColor: categoryColor }} className={`max-w-[32px] w-full  h-8 bg-[#0A7B75] rounded-lg`} />

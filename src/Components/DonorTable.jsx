@@ -36,8 +36,8 @@ const DonorTable = () => {
                             <IoIosCloseCircle onClick={clearAllFunctionality} className='text-[#A8A8A8] cursor-pointer text-xl md:hidden' />
                         )}
                 </div>
-                <div className="bg-white border px-3.5 py-2.5 flex cursor-pointer items-center rounded-lg gap-2 ">
-                    <img src={filter} className='h-5' alt="filter" />
+                <div className="bg-white border px-3.5 py-2.5 md:py-3 flex cursor-pointer items-center rounded-lg gap-2 ">
+                    <img src={filter} className='h-5 md:h-3.5' alt="filter" />
                     <h2 className='text-[#4A4A4A] text-xs font-bold md:block hidden'>Filter by</h2>
                 </div>
                 <div className="bg-white p-3 border flex cursor-pointer items-center rounded-lg gap-2 ">
@@ -79,7 +79,7 @@ const DonorTable = () => {
                         ))
                             : (
                                 <tr>
-                                    <td colSpan="6" className="py-3.5 px-6 text-center text-[#999999] text-sm border">
+                                    <td colSpan="8" className="py-3.5 px-6 text-center text-[#999999] text-sm border">
                                         No Data Found
                                     </td>
                                 </tr>

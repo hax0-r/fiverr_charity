@@ -10,6 +10,7 @@ import pips4_3 from "../assets/pips4/pips4_3.svg";
 import pips4_4 from "../assets/pips4/pips4_4.svg";
 import leftPipe from "../assets/pips4/leftPipe.svg";
 import rightPip from "../assets/pips4/rightPip.svg";
+import StraightResponsive from "../assets/pips4/StraightResponsive.svg";
 import AkaunTable1 from '../Components/AkaunTable1';
 import TwoPipes from '../assets/Components/TwoPipes';
 import AkaunTable2 from '../Components/AkaunTable2';
