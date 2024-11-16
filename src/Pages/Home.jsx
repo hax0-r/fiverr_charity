@@ -10,7 +10,6 @@ import pips4_3 from "../assets/pips4/pips4_3.svg";
 import pips4_4 from "../assets/pips4/pips4_4.svg";
 import leftPipe from "../assets/pips4/leftPipe.svg";
 import rightPip from "../assets/pips4/rightPip.svg";
-import StraightResponsive from "../assets/pips4/StraightResponsive.svg";
 import AkaunTable1 from '../Components/AkaunTable1';
 import TwoPipes from '../assets/Components/TwoPipes';
 import AkaunTable2 from '../Components/AkaunTable2';
@@ -88,7 +87,7 @@ const Home = () => {
                             <div key={item.id} onClick={() => toggleTab(index)}>
                                 {activeTabs[index] ? (
                                     <div className="lg:mt-[-9.2rem]">
-                                        <Akaun_Active color={"#0A7B75"} />
+                                        <Akaun_Active data={item} color={"#0A7B75"} />
                                     </div>
                                 ) : (
                                     <Akaun data={item} isActive={activeTabs[index]} />
@@ -148,7 +147,7 @@ const Home = () => {
                                     />
                                 </div>
 
-                                <div className="max-w-[679px] mx-auto grid md:grid-cols-2 grid-cols-1 w-full md:gap-4 gap-7 lg:mt-0 relative pb-3.5 mt-12">
+                                <div className="max-w-[679px] mx-auto grid md:grid-cols-2 grid-cols-1 w-full md:gap-4 gap-7 lg:mt-0 relative pb-3.5 mt-8">
                                     <div className='cursor-pointer' onClick={() => togglePipe(0)}>
                                         <Akaun_Active color={activeTwoPipes[0] ? "#b08ff6" : "#E2E2E2"} donate={true} />
                                     </div>

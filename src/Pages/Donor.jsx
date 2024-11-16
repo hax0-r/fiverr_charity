@@ -35,10 +35,10 @@ const Donor = () => {
                     <div className="flex items-center w-full justify-center flex-col mt-20">
                         <Akaun_Active color={"#0A7B75"} />
                         <StraightSmallPip pip1={"#0CC0B1"} />
-                        <div className="overflow-auto md:overflow-x-auto max-w-[1100px] w-full mx-auto lg:px-5 ">
+                        <div className="overflow-auto lg:block hidden md:overflow-x-auto max-w-[1100px] w-full mx-auto lg:px-5 ">
                             <table className="min-w-full text-center bg-white border border-[#E2E2E2] border-t-0 rounded-t-lg overflow-hidden text-sm">
                                 <thead>
-                                    <tr className="bg-teal-600 text-white">
+                                    <tr className="bg-[#0a7b75] text-white">
                                         <th className="py-3.5 px-6 font-semibold text-nowrap">No.</th>
                                         <th className="py-3.5 px-6 font-semibold text-nowrap">Transaction ID</th>
                                         <th className="py-3.5 px-6 font-semibold text-nowrap">Donor Name/Donor ID</th>
@@ -59,10 +59,38 @@ const Donor = () => {
                                 </tbody>
                             </table>
                         </div>
+                        <ul className='flex flex-col rounded-lg overflow-hidden w-full bg-[#0a7b75] lg:hidden'>
+                            <li className=" border border-[#76afac] text-white shadow-lg">
+                                <div
+                                    className={`overflow-hidden transition-all duration-500 text-white`}
+                                >
+                                    <div className="flex text-sm items-center  border-[1.5px] border-t-0 border-x-0 border-[#e2e2e2] justify-between ">
+                                        <p className="p-3 ">Transaction ID</p>
+                                        <p className="p-3 font-semibold">JIX12389480AMXCL</p>
+                                    </div>
+                                    <div className="flex text-sm items-center  border-[1.5px] border-x-0 border-t-0 border-[#e2e2e2] justify-between ">
+                                        <p className="p-3 ">Donor Name/Donor ID</p>
+                                        <p className="p-3 font-semibold">Abu Bakar </p>
+                                    </div>
+                                    <div className="flex text-sm items-center text-nowrap  border-[1.5px] border-x-0 border-t-0 border-[#e2e2e2] justify-between ">
+                                        <p className="p-3 ">Date & Time Transferred</p>
+                                        <p className="p-3 font-semibold">15/1/2022 9.00AM</p>
+                                    </div>
+                                    <div className="flex text-sm items-center  border-[1.5px] border-x-0 border-t-0 border-[#e2e2e2] justify-between ">
+                                        <p className="p-3 ">Amount Donated</p>
+                                        <p className="p-3 font-semibold">RM 1,000.00</p>
+                                    </div>
+                                    <div className="flex text-sm items-center  border-[1.5px] border-x-0 border-y-0 border-[#e2e2e2] justify-between ">
+                                        <p className="p-3 ">Status</p>
+                                        <p className="p-3 font-semibold">Paid out</p>
+                                    </div>
+                                </div>
+                            </li >
+                        </ul>
                         <StraightSmallPip pip1={"#0CC0B1"} />
                         <Akaun_Active color={"#0A7B75"} donate={true} />
                         <StraightSmallPip pip1={"#0CC0B1"} />
-                        <div className="overflow-auto md:overflow-x-auto max-w-[1100px] w-full mx-auto lg:px-5 ">
+                        <div className="overflow-auto lg:block hidden md:overflow-x-auto max-w-[1100px] w-full mx-auto lg:px-5 ">
                             <table className="min-w-full bg-white border border-[#E2E2E2] border-t-0 rounded-t-lg overflow-hidden text-sm text-center">
                                 <thead>
                                     <tr className="bg-[#1DA45F] text-white">
@@ -84,6 +112,34 @@ const Donor = () => {
                                 </tbody>
                             </table>
                         </div>
+                        <ul className='flex flex-col rounded-lg overflow-hidden w-full bg-[#1da45f] lg:hidden'>
+                            <li className=" border border-[#76afac] text-white shadow-lg">
+                                <div
+                                    className={`overflow-hidden transition-all duration-500 text-white`}
+                                >
+                                    <div className="flex text-sm items-center  border-[1.5px] border-t-0 border-x-0 border-[#e2e2e2] justify-between ">
+                                        <p className="p-3 ">Transaction ID</p>
+                                        <p className="p-3 font-semibold">JIX12389480AMXCL</p>
+                                    </div>
+                                    <div className="flex text-sm items-center  border-[1.5px] border-x-0 border-t-0 border-[#e2e2e2] justify-between ">
+                                        <p className="p-3 ">Donor Name/Donor ID</p>
+                                        <p className="p-3 font-semibold">Abu Bakar </p>
+                                    </div>
+                                    <div className="flex text-sm items-center text-nowrap  border-[1.5px] border-x-0 border-t-0 border-[#e2e2e2] justify-between ">
+                                        <p className="p-3 ">Date & Time Transferred</p>
+                                        <p className="p-3 font-semibold">15/1/2022 9.00AM</p>
+                                    </div>
+                                    <div className="flex text-sm items-center  border-[1.5px] border-x-0 border-t-0 border-[#e2e2e2] justify-between ">
+                                        <p className="p-3 ">Amount Donated</p>
+                                        <p className="p-3 font-semibold">RM 1,000.00</p>
+                                    </div>
+                                    <div className="flex text-sm items-center  border-[1.5px] border-x-0 border-y-0 border-[#e2e2e2] justify-between ">
+                                        <p className="p-3 ">Status</p>
+                                        <p className="p-3 font-semibold">Paid out</p>
+                                    </div>
+                                </div>
+                            </li >
+                        </ul>
                     </div>
 
                 </div>

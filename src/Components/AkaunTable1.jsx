@@ -1,11 +1,59 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { IoSearch } from 'react-icons/io5'
 import filter from "../assets/filter.svg"
 import { HiBars3BottomLeft } from 'react-icons/hi2'
 import { SlClose } from 'react-icons/sl'
 import { SearchContext } from '../Context/Context'
 import { AKAUN_DATA } from '../Data/AkaunData'
-import { IoIosCloseCircle } from 'react-icons/io'
+import { IoIosArrowDown, IoIosCloseCircle } from 'react-icons/io'
+
+const AccordionItem = ({ transactionId, donor, date, amount, status, index, isOpen, onClick }) => {
+    const contentRef = useRef();
+
+    return (
+        <li className=" border-b border-[#76afac] text-white shadow-lg">
+            <h2
+                onClick={onClick}
+                className="flex bg-[#0a7b75] flex-row justify-between items-center font-medium text-sm p-3 cursor-pointer"
+            >
+                <span>{index + 1}. {transactionId}</span>
+                <div className="flex items-center gap-2">
+
+                    <span>{donor}</span>
+                    <IoIosArrowDown className={`transform transition-transform duration-500 ${isOpen ? "rotate-180" : ""}`} />
+                </div>
+            </h2>
+            <div
+                className={`overflow-hidden transition-all duration-500`}
+                style={{
+                    maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : "0",
+                }}
+                ref={contentRef}
+            >
+                <div className="flex text-sm items-center bg-[#ebecec] border-[1.5px] border-t-0 border-[#e2e2e2] justify-between text-[#1D1D1D]">
+                    <p className="p-3 ">Transaction ID</p>
+                    <p className="p-3 font-semibold">{transactionId}</p>
+                </div>
+                <div className="flex text-sm items-center bg-[#f4f7f7] border-[1.5px] border-t-0 border-[#e2e2e2] justify-between text-[#1D1D1D]">
+                    <p className="p-3 ">Donor Name/Donor ID</p>
+                    <p className="p-3 font-semibold">{donor}</p>
+                </div>
+                <div className="flex text-sm items-center bg-[#f4f7f7] border-[1.5px] border-t-0 border-[#e2e2e2] justify-between text-[#1D1D1D] text-nowrap">
+                    <p className="p-3 ">Date & Time Transferred</p>
+                    <p className="p-3 font-semibold">{date}</p>
+                </div>
+                <div className="flex text-sm items-center bg-[#ebecec] border-[1.5px] border-t-0 border-[#e2e2e2] justify-between text-[#1D1D1D]">
+                    <p className="p-3 ">Amount Donated</p>
+                    <p className="p-3 font-semibold">{amount}</p>
+                </div>
+                <div className="flex text-sm items-center bg-[#f4f7f7] border-[1.5px] border-t-0 border-[#e2e2e2] justify-between text-[#1D1D1D]">
+                    <p className="p-3 ">Status</p>
+                    <p className="p-3 font-semibold">{status}</p>
+                </div>
+            </div>
+        </li >
+    );
+};
 
 const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
     const { setSearchQuery, searchQuery } = useContext(SearchContext)
@@ -20,6 +68,12 @@ const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
     const clearAllFunctionality = () => {
         setSearchQuery("")
     }
+
+    const [openTab, setOpenTab] = useState(null);
+
+    const toggleTab = (idx) => {
+        setOpenTab(openTab === idx ? null : idx);
+    };
 
     return (
         <div className='relative z-30'>
@@ -50,7 +104,7 @@ const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
                     )
                 }
             </div>
-            <div className="overflow-auto md:overflow-x-auto border rounded-lg border-[#E2E2E2]">
+            <div className="overflow-auto lg:block hidden md:overflow-x-auto border rounded-lg border-[#E2E2E2]">
                 <table className="min-w-full bg-white border-t-0  overflow-hidden text-sm">
                     <thead>
                         <tr style={{ backgroundColor: headColor }} className=" text-white">
@@ -82,6 +136,28 @@ const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
                     </tbody>
                 </table>
             </div>
+
+            <main className="lg:hidden">
+                <div className="flex justify-center items-start ">
+                    <div className="w-full max-w-[1000px] ">
+                        <ul className="flex flex-col rounded-lg overflow-hidden">
+                            {filteredData.map((item, index) => (
+                                <AccordionItem
+                                    key={index}
+                                    index={index}
+                                    transactionId={item.transactionId}
+                                    donor={item.donor}
+                                    date={item.date}
+                                    amount={item.amount}
+                                    status={item.status}
+                                    isOpen={openTab === index}
+                                    onClick={() => toggleTab(index)}
+                                />
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </main>
         </div>
     )
 }
