@@ -16,6 +16,7 @@ import TwoPipes from '../assets/Components/TwoPipes';
 import AkaunTable2 from '../Components/AkaunTable2';
 import { SearchContext } from '../Context/Context';
 import StraightSmallPip from '../assets/Components/StraightSmallPip';
+import { Donation_Received } from '../Data/Donation_Received';
 
 const Home = () => {
 
@@ -83,9 +84,15 @@ const Home = () => {
                     </div>
 
                     <div className="grid lg:grid-cols-4 grid-cols-1 w-full lg:gap-4 gap-7 mt-6 lg:mt-0 relative">
-                        {activeTabs.map((isActive, index) => (
-                            <div key={index} onClick={() => toggleTab(index)}>
-                                {isActive ? <div className="lg:mt-[-9.2rem] "> <Akaun_Active color={"#0A7B75"} /></div> : <Akaun isActive={isActive} />}
+                        {Donation_Received.map((item, index) => (
+                            <div key={item.id} onClick={() => toggleTab(index)}>
+                                {activeTabs[index] ? (
+                                    <div className="lg:mt-[-9.2rem]">
+                                        <Akaun_Active color={"#0A7B75"} />
+                                    </div>
+                                ) : (
+                                    <Akaun data={item} isActive={activeTabs[index]} />
+                                )}
                             </div>
                         ))}
                     </div>

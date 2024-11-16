@@ -5,7 +5,7 @@ import { LuUpload } from 'react-icons/lu'
 import StraightResponsive from "../assets/pips4/StraightResponsive.svg"
 import { useLocation } from 'react-router'
 
-const Akaun_Active = ({ donate, color, categoryColor = "#0A7B75", ProgressColor = "#9FE870" }) => {
+const Akaun_Active = ({ data, donate, color, categoryColor = "#0A7B75", ProgressColor = "#9FE870" }) => {
 
     const { pathname } = useLocation()
 
@@ -23,7 +23,7 @@ const Akaun_Active = ({ donate, color, categoryColor = "#0A7B75", ProgressColor 
                         <div style={{ backgroundColor: categoryColor }} className={`max-w-[32px] w-full  h-8 bg-[#0A7B75] rounded-lg`} />
                         <div className="w-full">
                             <h2 className="flex items-center w-full justify-between font-bold text-[#4A4A4A] leading-5">
-                                name <span className="text-xs"> </span>
+                            name <span className="text-xs"> </span>
                             </h2>
                             <p className="text-sm text-[#4A4A4A]">subName</p>
                         </div>
