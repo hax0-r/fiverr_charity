@@ -26,12 +26,12 @@ const Health = () => {
                     </div>
 
 
-                    <div className="flex items-center w-full  gap-8  justify-center max-w-[1000px] flex-wrap  mt-16">
+                    <div className="flex items-center w-full  gap-8  justify-center max-w-[1000px] flex-wrap md:mt-16 mt-8">
                         <Akaun_Active ProgressColor={"#2CA869"} categoryColor={"#2CA869"} color={"#2CA869"} donate={true} />
                         <Akaun_Active ProgressColor={"#2CA869"} categoryColor={"#2CA869"} color={"#2CA869"} donate={true} />
                         <Akaun_Active ProgressColor={"#2CA869"} categoryColor={"#2CA869"} color={"#2CA869"} donate={true} />
                     </div>
-                    <div className="max-w-[1100px] w-full mx-auto lg:px-5 mt-36">
+                    <div className="max-w-[1100px] w-full mx-auto lg:px-5 md:mt-36 mt-28">
                         <AkaunTable1 headColor={"#2CA869"} />
                     </div>
 

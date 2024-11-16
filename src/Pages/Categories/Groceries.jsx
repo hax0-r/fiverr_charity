@@ -26,12 +26,12 @@ const Groceries = () => {
                     </div>
 
 
-                    <div className="flex items-center w-full  gap-8  justify-center max-w-[1000px] flex-wrap  mt-16">
+                    <div className="flex items-center w-full  gap-8  justify-center max-w-[1000px] flex-wrap  md:mt-16 mt-8">
                         <Akaun_Active color={"#0A7B75"} />
                         <Akaun_Active color={"#0A7B75"} />
                         <Akaun_Active color={"#0A7B75"} />
                     </div>
-                    <div className="max-w-[1100px] w-full mx-auto lg:px-5 mt-36">
+                    <div className="max-w-[1100px] w-full mx-auto lg:px-5 md:mt-36 mt-28">
                         <AkaunTable1 headColor={"#0A7B75"} />
                     </div>
 

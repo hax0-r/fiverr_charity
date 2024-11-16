@@ -32,7 +32,7 @@ const Donor = () => {
                         <DonorTable />
                     </div>
 
-                    <div className="flex items-center w-full justify-center flex-col mt-20">
+                    <div className="flex items-center w-full justify-center flex-col md:mt-20 mt-10">
                         <Akaun_Active color={"#0A7B75"} />
                         <StraightSmallPip pip1={"#0CC0B1"} />
                         <div className="overflow-auto lg:block hidden md:overflow-x-auto max-w-[1100px] w-full mx-auto lg:px-5 ">
