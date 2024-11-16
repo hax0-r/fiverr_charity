@@ -27,7 +27,7 @@ const Education = () => {
                         <h2 className="text-[24px] font-bold text-[#0A7B75]">RM1,234,567.50</h2>
                     </div>
 
-                    <div className="flex items-center w-full md:gap-16 gap-8  justify-center max-w-[1000px] flex-wrap  mt-16">
+                    <div className="flex items-center w-full  gap-8  justify-center max-w-[1000px] flex-wrap  mt-16">
                         <Akaun_Active ProgressColor={"#5FC2C8"} categoryColor={"#5FC2C8"} color={"#5FC2C8"} donate={true} />
                         <Akaun_Active ProgressColor={"#5FC2C8"} categoryColor={"#5FC2C8"} color={"#5FC2C8"} donate={true} />
                         <Akaun_Active ProgressColor={"#5FC2C8"} categoryColor={"#5FC2C8"} color={"#5FC2C8"} donate={true} />

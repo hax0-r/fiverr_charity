@@ -26,7 +26,7 @@ const Health = () => {
                     </div>
 
 
-                    <div className="flex items-center w-full md:gap-16 gap-8  justify-center max-w-[1000px] flex-wrap  mt-16">
+                    <div className="flex items-center w-full  gap-8  justify-center max-w-[1000px] flex-wrap  mt-16">
                         <Akaun_Active ProgressColor={"#2CA869"} categoryColor={"#2CA869"} color={"#2CA869"} donate={true} />
                         <Akaun_Active ProgressColor={"#2CA869"} categoryColor={"#2CA869"} color={"#2CA869"} donate={true} />
                         <Akaun_Active ProgressColor={"#2CA869"} categoryColor={"#2CA869"} color={"#2CA869"} donate={true} />
