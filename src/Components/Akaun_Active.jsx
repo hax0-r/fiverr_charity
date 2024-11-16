@@ -14,16 +14,13 @@ const Akaun_Active = ({ data, donate, color, categoryColor = "#0A7B75", Progress
     return (
         <div>
             <div className="relative">
-                {
-                    (!donate) && (
-                        <img src={StraightResponsive} className={`absolute md:hidden top-48 right-0 ${pathname === "/" ? "block" : "hidden"}`} alt="" />
-                    )}
-                <div className="w-[280px] fastFadeIn overflow-hidden bg-white rounded-lg mx-auto pt-3 transition-all duration-500 border relative z-10">
+                <div className="w-[280px] z-30 fastFadeIn overflow-hidden bg-white rounded-lg mx-auto pt-3 transition-all duration-500 border relative">
+
                     <div className="flex items-center justify-center gap-3 px-4">
                         <div style={{ backgroundColor: categoryColor }} className={`max-w-[32px] w-full  h-8 bg-[#0A7B75] rounded-lg`} />
                         <div className="w-full">
                             <h2 className="flex items-center w-full justify-between font-bold text-[#4A4A4A] leading-5">
-                            name <span className="text-xs"> </span>
+                                name <span className="text-xs"> </span>
                             </h2>
                             <p className="text-sm text-[#4A4A4A]">subName</p>
                         </div>
@@ -64,12 +61,19 @@ const Akaun_Active = ({ data, donate, color, categoryColor = "#0A7B75", Progress
                     }
 
                 </div>
-                <div className="flex items-center justify-center h-full">
+                <div className="flex w-[310px] mx-auto relative items-center justify-center h-full bg-red-400">
                     <div
                         style={{
                             backgroundColor: color
                         }}
-                        className="w-[310px] absolute rounded-xl h-12 md:-bottom-3.5 -bottom-3" />
+                        className="w-[310px] z-20 absolute rounded-xl h-12 md:-bottom-3.5 -bottom-3" >
+                    </div>
+                    {
+                        (!donate) && (
+                            <div className="z-10">
+                                <img src={StraightResponsive} className={`absolute md:hidden -top-3 -right-3 ${pathname === "/" ? "block" : "hidden"}`} alt="" />
+                            </div>
+                        )}
                 </div>
             </div>
         </div>

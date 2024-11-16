@@ -66,7 +66,7 @@ const Home = () => {
             </div>
 
             <div className="flex items-center justify-center md:py-14 py-4 w-full">
-                <div className="flex items-center justify-center flex-col w-full max-w-[1280px] mx-auto xl:p-0 p-5">
+                <div className="flex items-center justify-center flex-col w-full max-w-[1280px] mx-auto xl:p-0 p-3">
                     <div className="px-8 py-4 rounded-lg border bg-white text-center w-full md:w-auto">
                         <h2 className="font-bold">Donation Received</h2>
                         <p className="pt-4 text-[#C4C4C4] text-sm">Amount</p>

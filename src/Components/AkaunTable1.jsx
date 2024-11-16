@@ -22,7 +22,7 @@ const AkaunTable1 = ({ headColor = "#0A7B75" }) => {
     }
 
     return (
-        <div className='relative'>
+        <div className='relative z-30'>
             <div className="flex items-center gap-2 justify-end absolute w-full top-[-3.2rem] right-0">
                 <div className="bg-white px-3 border flex items-center w-full rounded-lg gap-2 max-w-[342px] ">
                     <IoSearch className='text-lg text-zinc-600 ' />
