@@ -38,15 +38,15 @@ const AccordionItem = ({ transactionId, donor, date, amount, status, index, isOp
                     <p className="p-3 ">Donor Name/Donor ID</p>
                     <p className="p-3 font-semibold">{donor}</p>
                 </div>
-                <div className="flex text-sm items-center text-nowrap bg-[#f4f7f7] border-[1.5px] border-t-0 border-[#e2e2e2] justify-between text-[#1D1D1D]">
+                <div className="flex text-sm items-center text-nowrap bg-[#ebecec] border-[1.5px] border-t-0 border-[#e2e2e2] justify-between text-[#1D1D1D]">
                     <p className="p-3 ">Date & Time Transferred</p>
                     <p className="p-3 font-semibold text-nowrap">{date}</p>
                 </div>
-                <div className="flex text-sm items-center bg-[#ebecec] border-[1.5px] border-t-0 border-[#e2e2e2] justify-between text-[#1D1D1D]">
+                <div className="flex text-sm items-center bg-[#f4f7f7] border-[1.5px] border-t-0 border-[#e2e2e2] justify-between text-[#1D1D1D]">
                     <p className="p-3 ">Amount Donated</p>
                     <p className="p-3 font-semibold">{amount}</p>
                 </div>
-                <div className="flex text-sm items-center bg-[#f4f7f7] border-[1.5px] border-t-0 border-[#e2e2e2] justify-between text-[#1D1D1D]">
+                <div className="flex text-sm items-center bg-[#ebecec] border-[1.5px] border-t-0 border-[#e2e2e2] justify-between text-[#1D1D1D]">
                     <p className="p-3 ">Status</p>
                     <p className="p-3 font-semibold">{status}</p>
                 </div>

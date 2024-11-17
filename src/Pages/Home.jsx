@@ -149,10 +149,14 @@ const Home = () => {
 
                                 <div className="max-w-[679px] mx-auto grid md:grid-cols-2 grid-cols-1 w-full md:gap-4 gap-7 lg:mt-0 relative pb-3.5 mt-8">
                                     <div className='cursor-pointer' onClick={() => togglePipe(0)}>
-                                        <Akaun_Active color={activeTwoPipes[0] ? "#b08ff6" : "#E2E2E2"} donate={true} />
+                                        <a href="#table2">
+                                            <Akaun_Active color={activeTwoPipes[0] ? "#b08ff6" : "#E2E2E2"} donate={true} />
+                                        </a>
                                     </div>
                                     <div className='cursor-pointer' onClick={() => togglePipe(1)}>
-                                        <Akaun_Active donate={true} color={activeTwoPipes[1] ? "#b08ff6" : "#E2E2E2"} />
+                                        <a href="#table2">
+                                            <Akaun_Active donate={true} color={activeTwoPipes[1] ? "#b08ff6" : "#E2E2E2"} />
+                                        </a>
                                     </div>
                                 </div>
                             </>
@@ -229,7 +233,7 @@ const Home = () => {
                                         />
                                     </div>
 
-                                    <div className="max-w-[1100px] w-full mx-auto lg:px-5 lg:mt-0 mt-20">
+                                    <div id='table2' className="max-w-[1100px] w-full mx-auto lg:px-5 lg:mt-0 mt-20">
                                         <AkaunTable2 headerColor={"#B08FF6"} />
                                     </div>
                                 </>
@@ -247,7 +251,7 @@ const Home = () => {
                                         />
                                     </div>
 
-                                    <div className="max-w-[1100px] w-full mx-auto lg:px-5 lg:mt-0 mt-20">
+                                    <div id='table2' className="max-w-[1100px] w-full mx-auto lg:px-5 lg:mt-0 mt-20">
                                         <AkaunTable2 headerColor={"#0A7B75"} />
                                     </div>
                                 </>
@@ -265,7 +269,7 @@ const Home = () => {
                                         />
                                     </div>
 
-                                    <div className="max-w-[1100px] w-full mx-auto lg:px-5 lg:mt-0 mt-20">
+                                    <div id='table2' className="max-w-[1100px] w-full mx-auto lg:px-5 lg:mt-0 mt-20">
                                         <AkaunTable2 headerColor={"#5fc8a2"} />
                                     </div>
                                 </>
@@ -283,7 +287,7 @@ const Home = () => {
                                         />
                                     </div>
 
-                                    <div className="max-w-[1100px] w-full mx-auto lg:px-5 lg:mt-0 mt-20">
+                                    <div id='table2' className="max-w-[1100px] w-full mx-auto lg:px-5 lg:mt-0 mt-20">
                                         <AkaunTable2 headerColor={"#5fc2c8"} />
                                     </div>
                                 </>

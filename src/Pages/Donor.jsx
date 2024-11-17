@@ -23,7 +23,7 @@ const Donor = () => {
             <div className="flex items-center justify-center md:py-14 py-4 w-full">
                 <div className="flex items-center justify-center flex-col w-full max-w-[1280px] mx-auto xl:p-0 p-5">
                     <div className="px-8 py-4 rounded-lg border bg-white text-center w-full md:max-w-[936px]">
-                        <h2 className="font-bold">Donation Received</h2>
+                        <h2 className="font-bold text-[#4A4A4A]">Transaction ID: JIX12389480AMXCL</h2>
                         <p className="pt-4 text-[#C4C4C4] text-sm">Amount</p>
                         <h2 className="text-[24px] font-bold text-[#0A7B75]">RM1,234,567.50</h2>
                     </div>
